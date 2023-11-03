@@ -56,7 +56,7 @@ def cleanup(namespace):
         if (pod_phase == POD_SUCCEEDED or
            (pod_phase == POD_FAILED and pod_restart_policy == POD_RESTART_POLICY_NEVER) or
            (pod_reason == POD_REASON_EVICTED)):
-            if pod.metadata.labels.get('airflow_kpo_in_cluster'):
+            if pod.metadata.labels and pod.metadata.labels.get('airflow_kpo_in_cluster'):
                 terminal_state_duration = (
                     (
                         datetime.now(timezone.utc)
