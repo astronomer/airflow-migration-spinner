@@ -43,7 +43,7 @@ class VerifyVersionCommand(Command):
     """Custom command to verify that the git tag matches our version"""
 
     description = "verify that the git tag matches our version"
-    user_options = []  # type: ignore
+    user_options = []  # noqa: RUF012
 
     def initialize_options(self):
         pass
